@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "[*]Starting backup.."
+rm -R ./backups/*.tar
+echo "[+]Removed old backups!"
+echo "[*]Creating new backups.."
+
+./docker-backup backup --all --tar
+mv *.tar ./backups
+echo "[+]Done!"
